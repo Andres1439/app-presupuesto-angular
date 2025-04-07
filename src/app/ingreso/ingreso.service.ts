@@ -6,9 +6,15 @@ import { Ingreso } from './ingreso.model';
 })
 export class IngresoService {
   ingresos: Ingreso[] = [
-    new Ingreso('Salario', 5000),
-    new Ingreso('Venta coche', 15000),
+    new Ingreso('Salario', 4000),
+    new Ingreso('Venta coche', 500),
   ];
 
   constructor() {}
+
+  eliminar(ingreso: Ingreso) {
+    const index = this.ingresos.indexOf(ingreso);
+
+    this.ingresos.splice(index, 1);
+  }
 }
